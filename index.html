@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ripen Soft Technologies - Coming Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://colorlib.com/etc/cs/comingsoon_02/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/cs/comingsoon_02/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="css/toastr.css" />
+    <link rel="stylesheet" type="text/css" href="css/toastr-style.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+</head>
+
+<body ondragstart="return false">
+
+    <div class="simpleslide0">
+        <div class="simpleslide100-item bg-img1"
+            style="background-image: url('img/bg/bg-default.png');"></div>
+    </div>
+    <div class="size1 overlay1">
+
+        <div class="size1 flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-50">
+            <div class="txt-center p-b-25">
+                <img class="w-50" src="img/logo/dark-tech.png" alt="Rhythm" />
+            </div>
+            <h3 class="l1-txt1 txt-center p-b-25">
+                Coming Soon
+            </h3>
+            <p class="m2-txt1 txt-center p-b-33">
+                Our website is under development, follow us for next updates!
+            </p>
+            <div class="flex-w flex-c-m cd100 p-b-33">
+                <div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
+                    <span class="l2-txt1 p-b-9 days">35</span>
+                    <span class="s2-txt1">Days</span>
+                </div>
+                <div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
+                    <span class="l2-txt1 p-b-9 hours">17</span>
+                    <span class="s2-txt1">Hours</span>
+                </div>
+                <div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
+                    <span class="l2-txt1 p-b-9 minutes">50</span>
+                    <span class="s2-txt1">Minutes</span>
+                </div>
+                <div class="flex-col-c-m size2 bor1 m-l-15 m-r-15 m-b-20">
+                    <span class="l2-txt1 p-b-9 seconds">39</span>
+                    <span class="s2-txt1">Seconds</span>
+                </div>
+            </div>
+            <!-- <form class="w-full flex-w flex-c-m validate-form" action="/Subscribers/Create" method="post"
+                id="formSubscribe">
+                <div class="wrap-input100 validate-input where1" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100 placeholder0 s2-txt2" type="email" name="email" id="EmailID"
+                        placeholder="Enter Email Address" autocomplete="off">
+                    <span class="focus-input100"></span>
+                </div>
+                <button class="flex-c-m size3 s2-txt3 how-btn1 trans-04 where1 ms_btn" type="submit" name="commit"
+                    id="Subscribe">
+                    Subscribe
+                </button>
+            </form> -->
+        </div>
+    </div>
+
+    <!-- #region scripts -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/select2.min.js"></script>
+
+    <script src="js/moment.min.js"></script>
+    <script src="js/moment-timezone.min.js"></script>
+    <script src="js/moment-timezone-with-data.min.js"></script>
+    <script src="js/countdowntime.js"></script>
+
+    <script src="js/toastr.min.js"></script>
+    <script src="js/layout.js"></script>
+
+    <script>
+        var start = new Date(2022, 08, 01);
+        var startWrapper = moment(start);
+        var end = moment();
+        var enddays = end.diff(startWrapper, "days");
+        enddays = 0 - enddays;
+
+        var dt2 = new Date(); // 0:00 AM
+        dt2.setHours(0, 0, 0, 0);
+        var dt1 = new Date(); // 5:00 PM
+        var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+        diff /= 60;
+        diff = Math.abs(Math.round(diff));
+        var hours = (diff / 60);
+        hours = 24 - hours;
+        var rhours = Math.floor(hours);
+        var minutes = (hours - rhours) * 60;
+        var rminutes = Math.round(minutes);
+        var seconds = (minutes - rminutes) * 60;
+        var rseconds = Math.round(seconds);
+
+        $('.cd100').countdown100({
+            /*Set Endtime here*/
+            /*Endtime must be > current time*/
+            endtimeYear: 0,
+            endtimeMonth: 0,
+            endtimeDate: enddays,
+            endtimeHours: rhours,
+            endtimeMinutes: minutes,
+            endtimeSeconds: rseconds,
+            timeZone: ""
+            // ex:  timeZone: "America/New_York"
+            //go to " http://momentjs.com/timezone/ " to get timezone
+        });
+    </script>
+    <script src="js/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+
+    <script src="js/main.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"rayId":"6ac1f4edd51617d7","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.10.0","si":100}'>
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"rayId":"6ac1f4edba2f17d7","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.10.0","si":100}'>
+    </script>
+    <!-- #endregion -->
